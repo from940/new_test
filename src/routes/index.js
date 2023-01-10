@@ -4,7 +4,7 @@ import React, { Suspense, lazy } from "react";
 
 import MainLayout from "src/components/MainLayout";
 
-export const ROUTER = "/";
+export const ROUTER = "/new_test/";
 export const ROUTER_NOT_FOUND = "*";
 export const ROUTER_INTRO = "intro";
 export const ROUTER_TEST = "test";
