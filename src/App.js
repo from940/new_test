@@ -1,25 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
+import { CssBaseline, Snackbar, StyledEngineProvider } from "@mui/material";
+import { ThemeProvider } from "@mui/material/styles";
+import Routes from "src/routes";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          테스트 !!!
-        </a>
-      </header>
-    </div>
+    <StyledEngineProvider injectFirst>
+      <Routes />
+    </StyledEngineProvider>
   );
 }
-
-export default App;
