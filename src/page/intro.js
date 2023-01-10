@@ -1,9 +1,22 @@
+import { useNavigate, useLocation } from "react-router-dom";
 import { Box, Button } from "@mui/material";
+import * as PATH from "src/routes";
 
 export default function Intro() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  console.log(" location ", location);
+
   return (
-    <Box sx={{ width: "100%" }}>
-      {/* <MainMenu /> */}
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+        flexDirection: "column",
+      }}
+    >
       <Box
         sx={{
           width: "100%",
@@ -11,17 +24,15 @@ export default function Intro() {
         }}
       >
         인트로입니다
-        <Button
-          variant="contained"
-          onClick={() => {
-            console.log("이동");
-            // setPublishingTitle(title);
-            // handleClose();
-          }}
-        >
-          테스트하러 가기
-        </Button>
       </Box>
+      <Button
+        variant="contained"
+        onClick={() => {
+          navigate(PATH.TEST);
+        }}
+      >
+        테스트하러 가기
+      </Button>
     </Box>
   );
 }

@@ -1,8 +1,18 @@
-import { Box } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { Box, Button } from "@mui/material";
+import * as PATH from "src/routes";
 
 export default function Result() {
+  const navigate = useNavigate();
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+      }}
+    >
       {/* <MainMenu /> */}
       <Box
         sx={{
@@ -10,7 +20,7 @@ export default function Result() {
           height: "100%",
         }}
       >
-        결과입니다
+        결과입니다 ~
       </Box>
     </Box>
   );

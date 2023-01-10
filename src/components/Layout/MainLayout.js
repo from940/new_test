@@ -12,6 +12,13 @@ export default function MainLayout() {
         sx={{
           width: "100%",
           height: "100%",
+          display: "flex",
+          alignItems: "center",
+          flexDirection: "column",
+          flex: "1",
+          minWidth: "400px",
+          padding: "10px",
+          overflowX: "auto",
         }}
       >
         메인 레이아웃입니다

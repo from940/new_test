@@ -1,8 +1,23 @@
-import { Box } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { Box, Button } from "@mui/material";
+import * as PATH from "src/routes";
+import { useEffect } from "react";
 
 export default function Loading() {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    navigate(PATH.RESULT);
+  }, []);
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        width: "100%",
+      }}
+    >
       {/* <MainMenu /> */}
       <Box
         sx={{
@@ -10,7 +25,7 @@ export default function Loading() {
           height: "100%",
         }}
       >
-        로딩입니다
+        로딩 중 ...
       </Box>
     </Box>
   );
