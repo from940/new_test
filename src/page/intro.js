@@ -23,7 +23,18 @@ export default function Intro() {
       <Typography variant="h6" component="h6">
         description 영역
       </Typography>
-      <Box>이미지 넣을 곳</Box>
+      <Box
+        sx={{
+          border: 1,
+          borderColor: "black",
+          margin: "10px",
+          padding: "15px",
+          width: "100px",
+          height: "100px",
+        }}
+      >
+        이미지 넣을 곳
+      </Box>
       <Button
         variant="contained"
         onClick={() => {
