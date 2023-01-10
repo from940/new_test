@@ -8,6 +8,9 @@ import LinearProgress, {
 } from "@mui/material/LinearProgress";
 import * as PATH from "src/routes";
 
+import { questions } from "src/data/questions";
+
+// 추후 컴포넌트 분리해야 함
 function LinearProgressWithLabel({ ...props }) {
   return (
     <Box
@@ -34,7 +37,8 @@ export default function Test() {
   const navigate = useNavigate();
 
   // 질문지 개수
-  const [progress, setProgress] = useState(12);
+  const [progress, setProgress] = useState(0);
+  const [answers, setAnswers] = useState([]);
 
   return (
     <Box
@@ -46,26 +50,44 @@ export default function Test() {
         flexDirection: "column",
       }}
     >
-      <Box>문제 번호 </Box>
-      <Box>질문 내용</Box>
-      <Box>
-        <Button variant="contained" onClick={() => {}}>
-          선택지1
-        </Button>
-        <Button variant="contained" onClick={() => {}}>
-          선택지2
-        </Button>
+      <Typography> {`문제 ${progress + 1}번`}</Typography>
+      <Typography> {`내용 :: ${questions[progress].title}`}</Typography>
+
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
+        {questions[progress].options.map((option) => (
+          <Button
+            variant="contained"
+            sx={{
+              margin: "10px",
+            }}
+            onClick={() => {
+              // 답 선택
+              if (progress < questions.length - 1) {
+                setProgress((prev) => prev + 1);
+              }
+            }}
+          >
+            {`선택지 ${option.index}번  ${option.description}`}
+          </Button>
+        ))}
       </Box>
 
       <LinearProgressWithLabel />
-      <Button
-        variant="contained"
-        onClick={() => {
-          navigate(PATH.LOADING);
-        }}
-      >
-        결과확인하러 가기
-      </Button>
+      {progress == questions.length - 1 && (
+        <Button
+          variant="contained"
+          onClick={() => {
+            navigate(PATH.LOADING);
+          }}
+        >
+          결과확인하러 가기
+        </Button>
+      )}
     </Box>
   );
 }
