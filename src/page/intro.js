@@ -1,11 +1,10 @@
 import { useNavigate, useLocation } from "react-router-dom";
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 import * as PATH from "src/routes";
 
 export default function Intro() {
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(" location ", location);
 
   return (
     <Box
@@ -17,7 +16,14 @@ export default function Intro() {
         flexDirection: "column",
       }}
     >
-      <Box>인트로입니다</Box>
+      <Box>로고</Box>
+      <Typography variant="h2" component="h2">
+        테스트 제목 영역
+      </Typography>
+      <Typography variant="h6" component="h6">
+        description 영역
+      </Typography>
+      <Box>이미지 넣을 곳</Box>
       <Button
         variant="contained"
         onClick={() => {
