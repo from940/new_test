@@ -1,28 +1,30 @@
 import { Outlet } from "react-router-dom";
-import { Box } from "@mui/material";
-
-// import { MainMenu } from 'Components/Organisms/menu/mainMenu';
+import { isBrowser } from "react-device-detect";
+import { Box, useTheme } from "@mui/material";
 
 export default function MainLayout() {
-  console.log(" find hostname  :: ", window.location);
   return (
-    <Box sx={{ width: "100%" }}>
-      {/* <MainMenu /> */}
+    <Box
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        background: "#eeeeee",
+        overflowX: "hidden",
+      }}
+    >
       <Box
         sx={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-          flex: "1",
-          minWidth: "400px",
-          padding: "10px",
-          overflowX: "auto",
+          background: "#eeeeee",
+          height: "100vh",
+          maxWidth: isBrowser ? "1200px" : "100%",
+          width: isBrowser ? "1200px" : "100%",
+          minWidth: isBrowser ? "500px" : "100%",
         }}
       >
-        메인 레이아웃입니다
-        <Outlet />
+        <Box>
+          <Outlet />
+        </Box>
       </Box>
     </Box>
   );
