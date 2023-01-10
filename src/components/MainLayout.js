@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 // import { MainMenu } from 'Components/Organisms/menu/mainMenu';
 
 export default function MainLayout() {
+  console.log(" find hostname  :: ", window.location);
   return (
     <Box sx={{ width: "100%" }}>
       {/* <MainMenu /> */}
