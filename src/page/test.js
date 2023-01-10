@@ -11,17 +11,10 @@ export default function Test() {
         justifyContent: "center",
         alignItems: "center",
         width: "100%",
+        flexDirection: "column",
       }}
     >
-      {/* <MainMenu /> */}
-      <Box
-        sx={{
-          width: "100%",
-          height: "100%",
-        }}
-      >
-        테스트입니다
-      </Box>
+      <Box>테스트입니다</Box>
       <Button
         variant="contained"
         onClick={() => {

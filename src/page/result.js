@@ -14,14 +14,7 @@ export default function Result() {
       }}
     >
       {/* <MainMenu /> */}
-      <Box
-        sx={{
-          width: "100%",
-          height: "100%",
-        }}
-      >
-        결과입니다 ~
-      </Box>
+      <Box>결과입니다 ~</Box>
     </Box>
   );
 }

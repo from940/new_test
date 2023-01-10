@@ -17,14 +17,7 @@ export default function Intro() {
         flexDirection: "column",
       }}
     >
-      <Box
-        sx={{
-          width: "100%",
-          height: "100%",
-        }}
-      >
-        인트로입니다
-      </Box>
+      <Box>인트로입니다</Box>
       <Button
         variant="contained"
         onClick={() => {

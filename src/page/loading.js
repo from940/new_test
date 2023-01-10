@@ -18,15 +18,7 @@ export default function Loading() {
         width: "100%",
       }}
     >
-      {/* <MainMenu /> */}
-      <Box
-        sx={{
-          width: "100%",
-          height: "100%",
-        }}
-      >
-        로딩 중 ...
-      </Box>
+      <Box>로딩 중 ...</Box>
     </Box>
   );
 }
